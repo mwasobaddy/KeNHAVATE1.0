@@ -1,0 +1,181 @@
+
+.home_cards.active,
+.all_allocated_ideas.active,
+.all_pending_ideas.active,
+.all_committed_ideas.active,
+.all_history_ideas.active,
+.message_dd.active{
+    position: relative;
+    transform: translateY(0%);
+    transition: transform .5s ease-in-out;
+}
+
+.home_cards,
+.all_allocated_ideas,
+.all_pending_ideas,
+.all_committed_ideas,
+.all_history_ideas,
+.message_dd{
+    position: absolute;
+    transform: translateY(-120%);
+    top: 0px;
+}
+
+.comment_content{
+    display: flex;
+    width: 100%;
+    gap: 35px;
+}
+
+.comment_selection{
+    width: 50%;
+}
+
+.comment_select.active{
+    width: 50%;
+    transition: all .5s ease-in-out;
+}
+
+.comment_select{
+    width: 100%;
+    transition: all .5s ease-in-out;
+}
+
+.comment_select p{
+    margin-top: 1rem;
+    color: red;
+}
+
+.comment_select p a{
+    margin-top: 1rem;
+    color: rgb(13, 110, 253);
+}
+
+
+
+.comment_input.active{
+    position: relative;
+    transform: translateX(0%);
+    transition: transform .5s ease-in-out;
+}
+
+.comment_input{
+    position: absolute;
+    transform: translateX(1000%);
+}
+
+.p_diplay.active{
+    position: relative;
+    transform: translateX(0%);
+    transition: transform .5s ease-in-out;
+}
+
+.p_diplay{
+    position: absolute;
+    transform: translateX(1000%);
+}
+
+.comment_holder{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.comment_sub_holder_1.active{
+    width: 48.6%;
+    position: relative;
+    transform: translateX(0%);
+    transition: all .5s ease-in-out;
+}
+
+.comment_sub_holder_2.active{
+    width: 48.6%;
+    position: relative;
+    transform: translateX(0%);
+    transition: all .5s ease-in-out;
+}
+
+.comment_sub_holder_1{
+    width: 100%;
+    position: relative;
+    transition: all .5s ease-in-out;
+}
+
+.comment_sub_holder_2{
+    width: 48.6%;
+    position: absolute;
+    transform: translateX(1000%);
+}
+
+.comment_info.active{
+    width: 100%;
+    position: relative;
+    transform: translateX(0%);
+    transition: all .5s ease-in-out;
+}
+
+.comment_info{
+    width: 100%;
+    position: relative;
+    transition: all .5s ease-in-out;
+    transform: translateX(1000%);
+}
+
+.comment_sub_holder_1,
+.comment_sub_holder_2{
+
+}
+
+.display_vertical{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6px;
+    outline: 0.5px solid #c9c9c9;
+    border-radius: 5px;
+}
+
+.pending_sme{
+    background-color: tomato;
+    color: snow;
+    padding: 3px 8px;
+    border-radius: 6px
+}
+
+.reviewed_sme{
+    background-color: green;
+    color: snow;
+    padding: 3px 8px;
+    border-radius: 6px
+}
+
+
+/* Tablet screens */
+@media (min-width: 692px) and (max-width: 5555px) {
+    .card_wrapper{
+        justify-content: center;
+    }
+
+    .payment_card{
+        width: 45%;
+    }
+}
+
+
+
+
+/* Mobile screens */
+@media (max-width: 767px) {
+    .comment_content{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .comment_selection{
+        width: 100%;
+    }
+
+    .comment_select.active{
+        width: 100%;
+    }
+}

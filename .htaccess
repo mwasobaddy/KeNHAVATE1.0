@@ -1,0 +1,43 @@
+Options -Indexes
+Options +FollowSymLinks
+RewriteEngine On
+
+# Redirect to the new URL for HTTP
+RewriteRule ^kenhavate(.*)$ /KeNHAVATE/index.php [NC,L]
+RewriteRule ^home(.*)$ /KeNHAVATE/landing.php [NC,L]
+RewriteRule ^home/user(.*)$ /KeNHAVATE/landing.php [NC,L]
+RewriteRule ^terms_and_conditions(.*)$ terms_and_conditions.php [NC,L]
+RewriteRule ^view_doc(.*)$ /KeNHAVATE/view_pdf.php [NC,L]
+RewriteRule ^subject_matter_expert(.*)$ /KeNHAVATE/admin/subject_matter_expert_landing.php [NC,L]
+RewriteRule ^DD_Research_and_Innovation(.*)$ /KeNHAVATE/admin/DD_R&I_landing.php [NC,L]
+RewriteRule ^error_file(.*)$ /KeNHAVATE/auth_controller/error.html [NC,L]
+RewriteRule ^error_404(.*)$ /KeNHAVATE/admin/auth_controller/error.html [NC,L]
+
+RewriteRule ^auth/verify(.*)$ /KeNHAVATE/auth_controller/registration_and_verification.php [NC,L]
+RewriteRule ^contact-us(.*)$ /KeNHAVATE/contact_us.php [NC,L]
+RewriteRule ^submit-idea(.*)$ /KeNHAVATE/auth_controller/idea_submission.php [NC,L]
+
+RewriteRule ^admit-admin(.*)$ /KeNHAVATE/admin/auth_controller/add_staff.php [NC,L]
+RewriteRule ^get-all-admin(.*)$ /KeNHAVATE/admin/auth_controller/get_staff.php [NC,L]
+RewriteRule ^assign-expert(.*)$ /KeNHAVATE/admin/auth_controller/assign_expert.php [NC,L]
+RewriteRule ^view-table-details(.*)$ /KeNHAVATE/admin/auth_controller/view_table_details.php [NC,L]
+RewriteRule ^fetch-sme-values(.*)$ /KeNHAVATE/admin/auth_controller/fetch_values_sme.php [NC,L]
+RewriteRule ^staff-add-details(.*)$ /KeNHAVATE/admin/staff_add_them_details.php [NC,L]
+RewriteRule ^admin-populate(.*)$ /KeNHAVATE/admin/auth_controller/admin_populate_db.php [NC,L]
+RewriteRule ^post-challenge(.*)$ /KeNHAVATE/admin/auth_controller/post_challenges.php [NC,L]
+RewriteRule ^fetch-uploaded-challenge(.*)$ /KeNHAVATE/auth_controller/fetch_challenges.php [NC,L]
+RewriteRule ^fetch-responses(.*)$ /KeNHAVATE/admin/auth_controller/fetch_responses.php [NC,L]
+RewriteRule ^log-out-admin(.*)$ /KeNHAVATE/admin/auth_controller/logout.php [NC,L]
+
+# Serve static files directly (skip rewriting)
+RewriteRule \.(css|js|jpg|jpeg|png|gif)$ - [L]
+
+# Redirect directory access to error page
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*)$ kenhavate [NC,L]
+
+# Rewrite non-existing URLs to error.php (exclude .php)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.php$
+RewriteRule ^(.*)$ error_file [NC,L]
